@@ -61,7 +61,18 @@ router.put('/lobster/:id', function(req, res, next) {
     }
   });
 });
-
+// delete single lobster
+router.delete('/lobster/:id', function(req, res, next) {
+  Lobster.findByIdAndRemove(req.params.id, function(err, data) {
+    if (err) {
+      res.json({
+        'message': err
+      });
+    } else {
+      res.json(data);
+    }
+  });
+});
 
 
 

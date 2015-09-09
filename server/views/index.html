@@ -5,10 +5,23 @@
 
 {% block content %}
 
+
   <div class="container">
 
-    <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
+
+
+  <form id="new-lobster">
+  <h1>Add a Lobster</h1>
+    <div class="form-group">
+      <input type="text" class="form-control" id="name" placeholder="name" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" id="hobbies" placeholder="hobbies" required>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+
+  <p id="message"></p>
 
   </div>
 
