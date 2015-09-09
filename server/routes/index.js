@@ -45,10 +45,22 @@ router.post('/lobsters', function(req, res, next) {
     }
   });
 });
-
-
-
-
+// put single lobster
+router.put('/lobster/:id', function(req, res, next) {
+  var update = {
+    name: req.body.name,
+    hobbies: req.body.hobbies
+  };
+  Lobster.findByIdAndUpdate(req.params.id, update, function(err, data) {
+    if (err) {
+      res.json({
+        'message': err
+      });
+    } else {
+      res.json(data);
+    }
+  });
+});
 
 
 
