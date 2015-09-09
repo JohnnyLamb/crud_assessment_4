@@ -18,7 +18,7 @@ $(document).on('click','.delete-button',function(){
   $.ajax({
     method: "DELETE",
     url: '/lobster/' + $(this).attr('id')}).done(function(data){
-      $('#all').html('');
+      // $('#all').html('');
       $('#results').html('success!');
       listLobsters();
     });
@@ -28,7 +28,7 @@ $(document).on('click','.delete-button',function(){
 // list lobster function which loops through and adds delete and edit button
 
 function listLobsters(){
-  $('#all').html('');
+  // $('#all').html('');
   $.get('/lobsters',function(data){
     for (var i = 0; i < data.length; i++) {
       $('#all').prepend(
